@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var value: Double = 0
     var body: some View {
-        Text("Hello World")
+        ZStack {
+            VStack {
+                Slider(value: $value)
+                Text("\(value * 100)")
+            }
+        }.frame(width: 400, height: 800)
     }
 }
 
